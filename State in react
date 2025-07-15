@@ -1,0 +1,10 @@
+// NOTES:  
+          /*State - is a container to store data like variables 
+             -> this is mutable and dynamic
+             -> we have to imort it when we want to use it 
+             -> it re-render components autometically so that data can visible on UI
+          */
+          /*Hooks - are the special inbuilt react feature for functional components 
+             -> Hooks let you use dufferent react feature from your components
+          */
+          
