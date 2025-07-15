@@ -1,0 +1,28 @@
+// code for toggle in react
+
+
+import { use } from "react"
+import { useState } from "react"
+// import './my.css'
+// import Navbar from "./Navbar"
+
+    function App(){
+
+      const [display,setDisplay] = useState(true)
+      return(
+        <div>
+          <h1>Toggle in react</h1>
+          {
+            display?<h3>Faraz Shah</h3>:null
+          }
+
+          <button onClick={()=>{setDisplay(!display)}}>Toggle</button>
+
+        
+          
+        </div>
+      )
+    }
+
+
+  export default App
