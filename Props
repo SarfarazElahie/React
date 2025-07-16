@@ -1,0 +1,105 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import User from './User'
+import Collage from './array'
+import Student from './Student'
+// import './App.css'
+
+function App() {
+
+  // let name = "Sarfaraz Elahie"
+
+  // let name = "faraz"
+  // let age = 19
+  // let email="sarfarazelahie61@gmail.com"
+
+  const userDetail = {
+    name : "Sarfaraz",
+    age : 19,
+    email : "sarfarazelahie@gmail.com"
+  }
+
+  let collages = ["IIT", "NIT", "IIIT", "DU","LPU"]
+
+  let name = "Nanna"
+
+  const [studentName , setStudentName] = useState(name)
+
+  return (
+    <div>
+      {
+        < Student name = {studentName} />
+      }
+      <button onClick={()=>setStudentName("Gillu")}>Set student name</button>
+      
+
+   <hr />
+      <Collage names = {collages} />
+      <h1>Props in React</h1>
+      {/* <User name = {name} age = {age} email = {email}  /> */}
+
+      <User user = {userDetail} />
+      <User user = {userDetail} />
+      <User user = {userDetail} />
+
+      
+      
+      
+    </div>
+  )
+}
+
+export default App
+
+// collge student file (as array.jsx)
+
+function Collage({names}){
+    return(
+        <div>
+            <h1>Colage component</h1>
+            <h3>Collage 1 : {names[0]}</h3>
+            <h3>Collage 2 : {names[1]}</h3>
+            <h3>Collage 3 : {names[2]}</h3>
+            <h3>Collage 4 : {names[3]}</h3>
+            <h3>Collage 5 : {names[4]}</h3>
+
+        </div>
+    )
+}
+
+export default Collage
+
+// user file
+function User({user}){
+   
+    return(
+        <div>
+          
+           {/* <h2>{data.name} {data.age}</h2> */}
+           <hr />
+           <h2>Name : {user.name}</h2>
+          
+           <h2>Age: {user.age}</h2>
+          
+           <h2>Email: {user.email}</h2>
+           <hr />
+
+
+        </div>
+    )
+}
+
+export default User
+
+// Student file 
+function Student({name}){
+    return(
+        <div>
+            <h2>Student Name: {name} </h2>
+            
+        </div>
+    )
+}
+
+export default Student
