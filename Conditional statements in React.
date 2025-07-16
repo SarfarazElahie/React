@@ -1,0 +1,31 @@
+  // USING CONDITIONAL STATEMENT IN REACT
+
+import { useState } from 'react'
+// import './App.css'
+
+function App() {
+
+  const [count,setCount] = useState(0)
+
+  return (
+    <div>
+      <h1>Using Conditions in React</h1>
+
+      <h3>Count : {count}</h3>
+      <button onClick={()=>setCount(count +1)}>Increase</button>
+      {
+        count==0?<h3>Condition 0</h3>
+        :count==1?<h3>Condition 1</h3>
+        :count==2?<h3>Condition 2</h3>
+        :count==3?<h3>Condition 3</h3>
+        :count==4?<h3>Condition 4</h3>
+        :count==6?<h3>Condition 6</h3>
+        :<h3>Other Conditions</h3>
+      
+      }
+      
+    </div>
+  )
+}
+
+export default App
