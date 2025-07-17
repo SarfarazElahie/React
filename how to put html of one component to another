@@ -1,0 +1,38 @@
+// App.jsx file 
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from "./User"
+import Wrapper from './wrapper'
+    function App(){
+
+   
+      return(
+        <div>
+         <h1>Advanced Props</h1>
+
+         <User />
+
+         <Wrapper>
+            <h4>I am a wrapper</h4>
+            <h4>hii helo hi kesi ho bahi batao na a</h4>
+          </Wrapper>
+        </div>
+      )
+    }
+export default App
+
+
+
+// wrapper.jsx file 
+
+function Wrapper({children}){
+    return(
+        <div>
+            <h2>Wrapper</h2>
+            {children}
+        </div>
+    )
+}
+
+export default Wrapper
