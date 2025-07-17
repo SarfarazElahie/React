@@ -1,0 +1,92 @@
+// App.jsx file
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from "./User"
+    function App(){
+
+      // using variables in react in Props
+      let username = "Sarfaraz Elahie"
+
+      // using objects in react in Props
+
+      let student = {
+        name: "Faraz",
+        age : "20",
+        email: "faraz.com"
+      }
+
+      // using arrays in React
+
+      let months = ["Jan", "Feb", "Mar"]
+   
+      return(
+        <div>
+          <h1>Props in React</h1>
+          {/* using varibales */}
+          {/* <User name = {username} age = {19} />  */}
+
+          {/* using objects  */}
+          {/* <User studentDetails = {student} /> */}
+
+          {/* using arrays  */}
+          <User arr = {months} />
+
+        </div>
+      )
+    }
+export default App
+
+
+
+// USER.jsx file
+
+
+// Using of varibales in props in React
+
+// function User (data){
+//     return(
+//         <div>
+//             <h1>User component</h1>
+//             <h3>Name : {data.name} </h3>
+
+//             <h4>My age is : {data.age}</h4>
+//         </div>
+//     )
+// }
+
+// export default User
+
+
+
+// Using of objects in props in React
+
+// function User ({studentDetails}){
+//     return(
+//         <div>
+//             <h1>User component</h1>
+//             <h3>Name : {studentDetails.name} </h3>
+
+//             <h3>Age : {studentDetails.age}</h3>
+           
+//         </div>
+//     )
+// }
+
+// export default User
+
+
+
+// Using arrays in props 
+function User ({arr}){
+    return(
+        <div>
+           <h1>Month 1 : {arr[0]}</h1>
+           <h1>Month 2 : {arr[1]}</h1>
+           <h1>Month 3 : {arr[2]}</h1>
+           
+        </div>
+    )
+}
+
+export default User
