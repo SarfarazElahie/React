@@ -1,0 +1,38 @@
+ // USING OF DEFAULT PARAMETERS IN REACT IN PROPS 
+
+// App.jsx file
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from "./User"
+    function App(){
+
+   
+      return(
+        <div>
+         <h1>Advanced Props</h1>
+
+         <User />
+        </div>
+      )
+    }
+export default App
+
+
+function User({name = "Arun"}, age = "19"){
+
+
+  // user.jsx file 
+    // USING OF DEFAULT PARAMETERS IN REACT IN PROPS 
+   
+    return(
+       <div>
+          <h1>User Component</h1>
+
+          <h4>Name : {name}</h4>
+          <h4>Age : {age}</h4>
+       </div>
+    )
+}
+
+export default User
