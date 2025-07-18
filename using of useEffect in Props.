@@ -1,0 +1,65 @@
+// App.jsx file
+
+import { useEffect, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from './User'
+import Collage from './Collage';
+import Counter from './Counter';
+
+
+    function App(){
+
+      const [count,setcount] = useState(0)
+      const [data,setdata] = useState(0)
+
+
+      return(
+        <div>
+       <h1>useEffeect in react</h1>
+
+       <Counter count = {count} setcount = {setcount} data= {data} setdata ={setdata} /> 
+
+        </div>
+      )
+    }
+      
+export default App
+
+
+
+// Counte.jsx file 
+
+import { useEffect } from "react"
+
+function Counter({count, setcount, data, setdata}){
+
+    function callones(){
+        console.log("callones")
+    }
+
+    function callData(){
+        console.log("called DATA")
+    }
+
+    useEffect(()=>{
+        callData()
+    },[data])
+
+    useEffect(()=>{
+         callones()
+    },[])
+
+
+
+    return(
+        <div>
+            <h2>Count: {count}</h2>
+            <h2>Data: {data}</h2>
+
+            <button onClick={()=>setcount(count + 1)}>Click me </button>
+            <button onClick={()=>setdata(data + 1)}>data increase </button>
+        </div>
+    )
+}
+
+export default Counter
