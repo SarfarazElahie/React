@@ -1,0 +1,52 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from './User'
+
+const users = [
+  {
+    'name' : 'Sarfaraz',
+    'age' : '19',
+    'email' : 'sarfaraz.com',
+    'id' : '1'
+  },
+  
+  {
+    'name' : 'Sam',
+    'age' : '18',
+    'email' : 'sam.com',
+    'id' : '2'
+  },
+  {
+    'name' : 'peter',
+    'age' : '17',
+    'email' : 'peter.com',
+    'id' : '3'
+  },
+  {
+    'name' : 'alice',
+    'age' : '16',
+    'email' : 'alice.com',
+    'id' : '1'
+  }
+
+]
+
+
+    function App(){
+      
+      return(
+        <div>
+         <h2>Reuse Components in Loops in JSX </h2>
+
+{
+  users.map((item)=>(
+    <div id='user.id'>
+      < User data = {item} />
+    </div>
+  ))
+}
+
+        </div>
+      )
+    }
+export default App
