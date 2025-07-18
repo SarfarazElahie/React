@@ -1,0 +1,105 @@
+// App.jsx file
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from './User'
+import Collage from './Collage';
+
+
+    function App(){
+
+      const colleges = [
+  {
+    'name': 'Harvard University',
+    'city': 'Cambridge',
+    'website': 'harvard.edu',
+    'student': {
+      'name': 'John Smith',
+      'class': 'Senior',
+      'age': '21',
+      'email': 'john.smith@harvard.edu'
+    }
+  },
+  {
+    'name': 'Stanford University',
+    'city': 'Stanford',
+    'website': 'stanford.edu',
+    'student': {
+      'name': 'Michael Chen',
+      'class': 'Sophomore',
+      'age': '19',
+      'email': 'michael.chen@stanford.edu'
+    }
+  },
+  {
+    'name': 'MIT',
+    'city': 'Cambridge',
+    'website': 'mit.edu',
+    'student': {
+      'name': 'David Kim',
+      'class': 'Graduate',
+      'age': '24',
+      'email': 'd.kim@mit.edu'
+    }
+  },
+  {
+    'name': 'University of California',
+    'city': 'Berkeley',
+    'website': 'berkeley.edu',
+    'student': {
+      'name': 'Robert Wilson',
+      'class': 'Junior',
+      'age': '20',
+      'email': 'robert.w@berkeley.edu'
+    }
+  },
+  {
+    'name': 'Columbia University',
+    'city': 'New York',
+    'website': 'columbia.edu',
+    'student': {
+      'name': 'Thomas Brown',
+      'class': 'Senior',
+      'age': '21',
+      'email': 'thomas.b@columbia.edu'
+    }
+  }
+];
+      
+      return(
+        <div>
+          <h1>Nested Looping in React</h1>
+
+          {
+            colleges.map((item,index)=>(
+              <div key={index}>
+              <Collage data = {item} studentData = {item.student} />  // here item gives all data of each seprate objects in collages main object And item.student givies all data of student object inside of seprate objects in collages 
+              </div>
+             
+            ))
+          }
+
+        </div>
+      )
+    }
+      
+export default App
+
+
+
+// Collage.jsx file
+
+function Collage({data, studentData}){
+    return(
+        <div>
+              <hr />
+                <h3>Name : {data.name}</h3>
+                <h3>City : {data.city}</h3>
+                <h3>Student Name : {studentData.name}</h3>
+                <h3>Student Age : {studentData.age}</h3>
+                 <hr /> 
+        </div>
+    )
+}
+
+export default Collage
