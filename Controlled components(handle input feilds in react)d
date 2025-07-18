@@ -1,0 +1,46 @@
+// App.jsx file 
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+
+
+    function App(){
+
+      const [name,setname] = useState("")      
+      const [password,setpassword] = useState("")      
+      const [email,setemail] = useState("")   
+      
+      let clear = ()=>{
+        setname("");
+        setpassword("");
+        setemail("");
+      }
+
+      return(
+        <div>
+         <h1>Controlled Components   </h1>
+
+          <form action="">
+            <input type="text" value={name} onChange={(event)=>setname(event.target.value)} placeholder='Enter Name' />
+            <br /><br />
+            <input type="password" value={password} onChange={(event)=>setpassword(event.target.value)} placeholder='Enter Password' />
+            <br /><br />
+            <input type="email" value={email} onChange={(event)=>setemail(event.target.value)} placeholder='Enter Email' />
+            <br /><br />
+
+            <button>Submit</button>
+            <br /> <br />
+            <button onClick={clear}>Clear</button>
+
+            <h3>{name}</h3>
+            <h3>{password}</h3>
+            <h3>{email}</h3>
+          </form>
+
+
+       
+         
+        </div>
+      )
+    }
+export default App
