@@ -1,2 +1,2 @@
 # React
-its a repo of my learning rreact files
+its a repo of my learning React files
