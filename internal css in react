@@ -1,0 +1,31 @@
+// App.jsx file
+
+import { useEffect, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from './User'
+import Collage from './Collage';
+import Counter from './Counter';
+
+
+    function App(){
+
+
+      return(
+        <div>
+          <h1 style={{color:"red"}}>Incline Styling in React</h1>
+
+          <div className="profile-card">
+            <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+              <div className="info" style={{display: 'flex', flexDirection: 'coloumn', gap: '25px', color: 'blueviolet'}}>
+                <h4>Sarfaraz Ealhi</h4>
+            <h4>Email: Sarfaraz@gmail.com</h4>
+              </div>
+      
+          </div>
+        </div>
+       
+      )
+    }
+      
+export default App
