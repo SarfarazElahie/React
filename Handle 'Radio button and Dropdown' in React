@@ -1,0 +1,49 @@
+// App.jsx
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+
+
+    function App(){
+
+      const [gender, setgender] = useState('female')
+
+      const [city,selectcity]= useState("Delhi")
+
+      
+      return(
+        <div>
+         <h2> Handle 'Radio button and Dropdown' in React </h2>
+
+         <h4>Select Gender</h4>
+
+
+         <input type="radio" name='gender'  checked ={gender =='male'} id='male' onChange={(event)=>setgender(event.target.value)} value='male' />
+
+         <label htmlFor='male' id='Male'> Male</label>
+
+
+
+         <input type="radio" name='gender' checked ={gender =='female'} id='female' onChange={(event)=>setgender(event.target.value)} value='female' /> 
+
+         <label htmlFor='female' id='female'>Female</label>
+
+
+         <h3>Selected Gender : {gender}</h3>
+
+                <br />
+
+         <h3>Select City</h3>     
+
+         <select  defaultValue={"Delhi"} onChange={(event)=> selectcity(event.target.value)}>
+          <option value="Noida">Noida</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Gurgaon">Gurgaon</option>
+          </select>  
+
+          <h3>Selected City : {city}</h3>
+
+        </div>
+      )
+    }
+export default App
