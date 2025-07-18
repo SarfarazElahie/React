@@ -1,0 +1,139 @@
+// App.jsx file
+import './css/external-style.css'
+
+    function App(){
+
+
+      return(
+        <div className='main'>
+          <h1 className='heading'>External Styling in React</h1>
+
+<div className="content">
+
+
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+      
+          </div>
+          <div className="profile-card">
+              <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div className='info'>
+                  <h3 className='title'>Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+
+        </div>        
+      
+          </div>
+
+
+        </div>
+       
+      )
+    }
+      
+export default App
+
+  // external-style.css file
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    padding: 50px;
+}
+
+.content{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 0px 50px;
+    justify-content: center;
+}
+.heading{
+    color: red;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title{
+    display: block;
+}
+
