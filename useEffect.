@@ -1,0 +1,63 @@
+import { useEffect, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import User from './User'
+import Collage from './Collage';
+
+
+    function App(){
+
+      const [counter,setcounter] = useState(0)
+      const [data,setdata] = useState(0)
+
+      useEffect(()=>{
+         callOnes()
+      },[])
+
+      function callOnes(){
+        console.log("CallOnes Function")
+      }
+
+      function counterCall(){
+        console.log("countercall ",counter)
+      }
+
+      useEffect(()=>{
+        counterCall()
+      },[counter])
+
+      /*
+      notes****
+
+      1. for only one time use of function uss
+         useEffect(()=>{
+         // func you wann call
+      },[])
+
+      2. for a perticular element use of function uss
+         useEffect(()=>{
+         // func you wann call
+      },[usestate var 1 ])
+
+      2. for multiple elements use of function uss
+         useEffect(()=>{
+         // func you wann call
+      },[usestate1 var 1, usestate2 var 1  ])
+      
+      */
+
+ 
+
+     
+
+      return(
+        <div>
+          <h1>useEffect in React</h1>
+
+          <button onClick={()=>setcounter(counter + 1)}>Counter {counter}</button>
+          <button onClick={()=>setdata(data + 1)}>Data {data}</button>
+
+        </div>
+      )
+    }
+      
+export default App
