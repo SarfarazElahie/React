@@ -1,0 +1,88 @@
+// App.jsx file
+
+import './css/external-style.css'
+
+import { useState } from 'react'
+import User from './User'
+
+    function App(){
+
+      const [rating,setrating] = useState(9.4)
+
+
+      return(
+        <div className='main'>
+          <h1 className='heading'>Module Css in React</h1>
+          <h3>hello</h3>
+
+        <div className="profile-container">
+         <User />
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+          <User />
+        </div>
+         
+
+        </div>
+       
+      )
+    }
+      
+export default App
+
+
+// User.jsx file
+
+import style from './user.module.css'
+
+function User(){
+   
+    return(
+       <div>
+
+          <div className="profile">
+            <img src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_(Anime)_character_image.png/revision/latest?cb=20180918060244" alt=""  width={300} />
+
+                <div>
+                  <h3 className={style.heading3} >Web developer</h3>
+                  <h4>Sarfaraz Ealhi</h4>
+                  <h4>Email: Sarfaraz@gmail.com</h4>
+                </div>
+
+          </div>
+          
+        </div>
+    )
+}
+
+
+export default User
+
+// user.module.css' file
+
+.heading3{
+    color: blue;
+}
+
+
+//external.css file 
+
+.heading{
+    color: red;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    /* border: 2px solid red; */
+    justify-content: center;
+    padding: 25px;
+    margin-bottom: 25px;
+}
