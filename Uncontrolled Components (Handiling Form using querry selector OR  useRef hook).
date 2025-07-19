@@ -1,0 +1,74 @@
+// App.jsx file
+
+import { useRef, useState } from 'react'
+
+import User from './User'
+
+    function App(){
+
+      // Form handle function usin querry selector 
+      const handleForm = (event)=>{
+        event.preventDefault()
+        const user = document.querySelector('#user').value
+        const userPassord = document.querySelector('#password').value
+        console.log(user)
+        console.log(userPassord)
+      }
+
+  
+       // Form handle function usin useRef
+      const handleFormRef = (event)=>{
+        event.preventDefault()
+        const user = userRef.current.value
+        const userPassword = passwordRef.current.value
+        console.log("User Name :", user, ", password : ", userPassword)
+      }
+
+      // useRef variables for getting input feild value using useRef
+      const userRef = useRef()
+      const passwordRef = useRef()
+      
+
+      return(
+        <div className='main'>
+          
+        <h1>Uncontrolled Components</h1>
+
+        <hr />
+        <h2>Handle Form using Querry selector</h2>
+
+          <form action="" method='post' onSubmit={handleForm}>
+            <input type="text" placeholder='Enter user name' id='user' />
+            <br /><br />
+            <input type="password" placeholder='Enter password' id='password' />
+            <br /><br />
+            <button>
+              Submit
+            </button>
+          </form>
+
+          <hr />
+          <br /><br />
+        
+
+
+        <hr />
+         <h2>Handle Form using useRef</h2>
+
+          <form action="" method='post' onSubmit={handleFormRef}>
+            <input type="text" ref={userRef} placeholder='Enter user name' id='userRef' />
+            <br /><br />
+            <input type="password" ref={passwordRef} placeholder='Enter password' id='passwordRef' />
+            <br /><br />
+            <button>
+              Submit with Ref
+            </button>
+          </form>
+          <hr />
+
+        </div>
+       
+      )
+    }
+      
+export default App
