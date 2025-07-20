@@ -1,0 +1,42 @@
+// App.jsx file
+
+import {useFormStatus} from 'react-dom'
+
+function App(){
+
+    const handleSumbmit = async ()=>{
+        await new Promise(res=> setTimeout(res,2000));
+        console.log("submit")
+    }
+
+    // handleSumbmit()
+
+    function CustumerForm(){
+
+        const {pending} = useFormStatus()
+        console.log(pending)
+        return(
+            <div>
+            <input type="text" placeholder="enter your name" />
+            <br /> <br />
+            <input type="text" placeholder="enter your password"/>
+            <br /> <br />
+            <button disabled ={pending}>{pending ? "Sumbitting": "Submit"}</button>
+            </div>
+        )
+   }
+
+    return(
+        <div>
+        <h1>UserForm status</h1>
+
+        <form action={handleSumbmit}>
+             <CustumerForm />
+        </form>
+
+       
+        </div>
+    )
+}
+
+export default App
