@@ -1,0 +1,91 @@
+import { useState } from 'react';
+
+function App() {
+    const [users, setUsers] = useState([]);
+    const [currentUserInput, setCurrentUserInput] = useState(''); // Renamed for clarity
+    const [message, setMessage] = useState(''); // State for displaying messages to the user
+
+    // Derived state calculations
+    const totalUsers = users.length;
+    // Get the last user, handle case where array might be empty
+    const lastUser = users.length > 0 ? users[users.length - 1] : 'N/A';
+
+    // Calculate unique users using a Set
+    const uniqueUsers = new Set(users);
+    const totalUniqueUsers = uniqueUsers.size;
+
+    const handleAddUser = () => {
+        const trimmedUserInput = currentUserInput.trim();
+
+        if (trimmedUserInput === '') {
+            setMessage('User name cannot be empty.');
+            return;
+        }
+
+        // Check if the user already exists in the list (case-sensitive)
+        if (users.includes(trimmedUserInput)) {
+            setMessage(`'${trimmedUserInput}' already exists in the list.`);
+        } else {
+            // Add the new user to the list
+            setUsers([...users, trimmedUserInput]);
+            // Clear the input field
+            setCurrentUserInput('');
+            setMessage(`'${trimmedUserInput}' added successfully!`);
+        }
+    };
+
+    return (
+        <div className="p-4 max-w-md mx-auto bg-gray-100 rounded-lg shadow-md font-sans">
+            <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">Derived State in React</h1>
+
+            <div className="mb-4">
+                <label htmlFor="userInput" className="block text-gray-700 text-sm font-bold mb-2">
+                    Add New User:
+                </label>
+                <input
+                    id="userInput"
+                    type="text"
+                    value={currentUserInput}
+                    onChange={(event) => setCurrentUserInput(event.target.value)}
+                    placeholder='Enter user name'
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500"
+                />
+            </div>
+
+            <button
+                onClick={handleAddUser}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mb-4"
+            >
+                Add User
+            </button>
+
+            {/* Display messages */}
+            {message && (
+                <p className={`text-sm mb-4 ${message.includes('already exists') || message.includes('empty') ? 'text-red-600' : 'text-green-600'}`}>
+                    {message}
+                </p>
+            )}
+
+            <div className="bg-white p-4 rounded-lg shadow-inner">
+                <h2 className="text-lg font-semibold text-gray-700 mb-2">Current Status:</h2>
+                <p className="text-gray-600 mb-1"><strong>Total Users:</strong> {totalUsers}</p>
+                <p className="text-gray-600 mb-1"><strong>Last User Added:</strong> {lastUser}</p>
+                <p className="text-gray-600"><strong>Unique Total Users:</strong> {totalUniqueUsers}</p>
+            </div>
+
+            {/* Display the list of all users */}
+            {users.length > 0 && (
+                <div className="mt-6 bg-white p-4 rounded-lg shadow-inner">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-2">All Users:</h3>
+                    <ul className="list-disc list-inside text-gray-600">
+                        {users.map((user, index) => (
+                            <li key={index} className="py-0.5">{user}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default App;
