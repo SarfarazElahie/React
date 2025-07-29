@@ -1,0 +1,74 @@
+// App.jsx file
+import React from 'react'
+import './index.css';
+import { Header } from './Header'
+import { Content } from './Content'
+import { Footer } from './Footer'
+
+ const App = () => {
+  return (
+    <div>
+        <Header />
+        <Content />
+        <Footer />
+    </div>
+  )
+}
+
+export default App
+
+
+//Content.jsx file
+
+import React, { useState } from 'react'
+
+export const Content = () => {
+    let handleuser=()=>{
+        let names = ["Bob", "Dev", "Rahul", "David", "Sam", "Ravi", "Tony"]
+        let int = Math.floor( Math.random() *7)
+        return setName(names[int])
+    }
+
+    let incCount = ()=>{
+        return setCount(count= count + 1)
+    }
+    let decCount = ()=>{
+        return setCount(count= count - 1)
+    }
+
+    let [name, setName] = useState('Faraz')
+    let [count,setCount] = useState(0)
+
+    let func1 = ()=>{
+      console.log("Func 1 clicked")
+    }
+
+    let func2 = (name)=>{
+      console.log("Func 2 clicked , Name :", name)
+    }
+
+    let func3 = (e)=>{
+      console.log(e.target.innerText)
+    }
+
+    let func4 = (e)=>{
+      console.log(e.target.value)
+    }
+  return (
+    <main>
+        <h4>Hello, {name}</h4>
+
+        <button onClick={func1}>Clicked it </button>
+        <button onClick={()=> func2('Faraz')}>Clicked it </button>
+        <button onClick={(e)=> func3(e)}>Clicked it </button>
+        <button onClick={handleuser}>Change Name</button>
+
+        <input onChange={func4} type="text" placeholder='Enter text' />
+
+        <h2>Count : {count}</h2>
+        <button onClick={incCount}>+</button>
+        <button onClick={decCount}>-</button>
+
+    </main>
+  )
+}
